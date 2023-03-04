@@ -1,0 +1,30 @@
+/* ---------------------------- FUNCTIONS ---------------------------- */
+@mixin sectionWrapper($paddingX, $paddingY) {
+  width: $width;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $paddingX $paddingY;
+}
+
+@mixin flexElement($justify-content, $align-items, $wrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $wrap;
+}
+
+@mixin smallFont {
+  font-size: fontSize(14);
+  line-height: lineHeight(20, 14);
+  letter-spacing: 0.2px;
+}
+
+/* ---------------------------- FUNCTIONS ---------------------------- */
+@function fontSize($value) {
+  @return ($value / 16) * 1rem;
+}
+
+@function lineHeight($value, $fontsize) {
+  @return ($value / $fontsize);
+}
